@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Công tắc và bóng đèn</title>
+</head>
+<body>
+<button onclick="turnOn()">Bật</button>
+<div id="div"><img id="turnon" src="imgoff.jpeg" height="150" width="200"/></div>
+<button onclick="turnOff()">Tắt</button>
+<script>
+
+    function ElectricLamp() {
+        this.lamp = function () {
+            if (this.status) {
+                document.getElementById("turnon").src = "imgon.jpg";
+            }
+            else{
+                document.getElementById("turnon").src = "imgoff.jpeg";
+            }
+        };
+        this.getTurnOn = function () {
+            this.status = true;
+        };
+        this.getTurnOff = function () {
+            this.status = false;
+        }
+    }
+    let electricLam = new ElectricLamp();
+    function turnOn() {
+        electricLam.getTurnOn();
+        electricLam.lamp();
+    }
+    function turnOff() {
+        electricLam.getTurnOff();
+        electricLam.lamp();
+    }
+
+</script>
+</body>
+</html>
